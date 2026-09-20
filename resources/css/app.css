@@ -739,3 +739,12 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
   .page-hero__shade{display:none}
   .prose{color:#000}
 }
+
+/* ---- Botón de llamada (flotante y en la barra) ---- */
+.call-fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 72px);z-index:90;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);border:1px solid rgba(197,164,109,.7);box-shadow:0 14px 34px -10px rgba(0,0,0,.55);transition:transform .5s var(--ease),background .4s,color .4s;view-transition-name:site-call}
+.call-fab:hover,.call-fab:focus-visible{transform:translateY(-3px) scale(1.05);background:var(--gold);color:var(--navy)}
+.call-fab__tip{position:absolute;right:calc(100% + 12px);top:50%;transform:translate(12px,-50%);background:var(--navy);color:#F5F1E8;border:1px solid rgba(197,164,109,.5);padding:12px 18px;font-size:.85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);box-shadow:0 14px 34px -14px rgba(0,0,0,.6)}
+.call-fab:hover .call-fab__tip,.call-fab:focus-visible .call-fab__tip{opacity:1;transform:translate(0,-50%)}
+@media(max-width:480px){.call-fab{width:56px;height:56px;bottom:calc(max(18px,env(safe-area-inset-bottom)) + 68px)}}
+.contact__quick{display:flex;flex-wrap:wrap;gap:14px}
+@media print{.call-fab{display:none!important}}

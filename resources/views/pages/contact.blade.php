@@ -33,11 +33,10 @@
                     <li><x-symbol name="pin" :size="22" /><div><span>Oficina</span><address>{!! implode('<br>', array_map('e', $site->addressLines())) !!}</address></div></li>
                     <li><x-symbol name="clock" :size="22" /><div><span>Horario</span><span class="plain">{{ $site->hours() }}</span></div></li>
                 </ul>
-                @if($whatsapp)
-                    <div class="contact__quick reveal" style="--d:.28s">
-                        <x-button label="Escribir por WhatsApp" :href="$whatsapp" variant="outline" target="_blank" rel="noopener noreferrer" />
-                    </div>
-                @endif
+                <div class="contact__quick reveal" style="--d:.28s">
+                    @if($site->phone())<x-button label="Llamar ahora" :href="$site->phoneHref()" variant="primary" :arrow="false" />@endif
+                    @if($whatsapp)<x-button label="Escribir por WhatsApp" :href="$whatsapp" variant="outline" target="_blank" rel="noopener noreferrer" />@endif
+                </div>
                 <ol class="expect reveal" style="--d:.34s">
                     <li><b>1</b><span>Recibimos su solicitud y la revisamos con confidencialidad.</span></li>
                     <li><b>2</b><span>Le respondemos dentro del horario de atención para coordinar una primera conversación.</span></li>

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Article;
 use App\Models\Attorney;
 use App\Models\PracticeArea;
+use App\Models\Setting;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -163,5 +164,14 @@ class PublicPagesTest extends TestCase
     {
         $this->get('/buscar?q=corporativo')->assertSee('Derecho Corporativo');
         $this->get('/buscar?q=a')->assertSee('Escriba al menos dos letras');
+    }
+
+    public function test_call_buttons_use_the_configured_phone_and_hide_without_one(): void
+    {
+        $this->get('/')->assertSee('class="call-fab" href="tel:+525500000000"', false)->assertSee('Llamar ahora');
+
+        Setting::set('phone', '');
+
+        $this->get('/')->assertDontSee('call-fab', false);
     }
 }

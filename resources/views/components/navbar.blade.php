@@ -14,6 +14,9 @@
             </ul>
         </nav>
         <div class="nav__actions">
+            @if($site->phone() !== '')
+                <a class="nav__search nav__call" href="{{ $site->phoneHref() }}" aria-label="Llamar: {{ $site->phone() }}"><x-symbol name="phone" :size="20" /></a>
+            @endif
             <a class="nav__search" href="{{ route('search') }}" aria-label="Buscar en el sitio"><x-symbol name="search" :size="20" /></a>
             <x-button label="Agendar consulta" :href="route('contact.form', ['tipo' => 'cita'])" variant="gold" :arrow="false" class="btn--sm nav__cta" />
             <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span></button>

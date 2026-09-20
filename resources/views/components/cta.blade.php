@@ -20,10 +20,11 @@
         <p class="cta__text reveal" style="--d:.1s">{{ $text ?? setting('cta_text', config('despacho.cta.text')) }}</p>
         <div class="cta__btns reveal" style="--d:.2s">
             <x-button :label="$primaryLabel" :href="$primaryHref" variant="gold" />
+            @if($secondary && site()->phone())
+                <x-button label="Llamar ahora" :href="site()->phoneHref()" variant="ghost" :arrow="false" />
+            @endif
             @if($secondary && $whatsapp)
                 <x-button label="Escribir por WhatsApp" :href="$whatsapp" variant="ghost" target="_blank" rel="noopener noreferrer" />
-            @elseif($secondary && site()->phone())
-                <x-button :label="site()->phone()" :href="site()->phoneHref()" variant="ghost" :arrow="false" />
             @endif
         </div>
     </div>

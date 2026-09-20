@@ -83,6 +83,7 @@
     </main>
 
     <x-footer :areas="$footerAreas ?? collect()" />
+    <x-call-button />
     <x-whatsapp />
 
     @foreach(array_merge([$organization], $schema) as $node)
