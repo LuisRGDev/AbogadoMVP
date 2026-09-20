@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('Panel del despacho')
-            ->favicon(asset('favicon.svg'))
+            ->favicon('/favicon.svg')
             ->colors([
                 'primary' => Color::hex('#C5A46D'),
                 'danger' => Color::Rose,
