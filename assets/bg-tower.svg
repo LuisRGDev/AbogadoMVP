@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26324c"/><stop offset="1" stop-color="#0B1220"/></linearGradient><linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#C5A46D" stop-opacity=".0"/><stop offset=".5" stop-color="#E9D3A4" stop-opacity=".18"/><stop offset="1" stop-color="#C5A46D" stop-opacity="0"/></linearGradient></defs><rect width="1920" height="1080" fill="url(#g)"/>
+<line x1="-1080" y1="1080" x2="792" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="-910" y1="1080" x2="806" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="-740" y1="1080" x2="820" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="-570" y1="1080" x2="834" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="-400" y1="1080" x2="848" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="-230" y1="1080" x2="862" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="-60" y1="1080" x2="876" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="110" y1="1080" x2="890" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="280" y1="1080" x2="904" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="450" y1="1080" x2="918" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="620" y1="1080" x2="932" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="790" y1="1080" x2="946" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="960" y1="1080" x2="960" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="1130" y1="1080" x2="974" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="1300" y1="1080" x2="988" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="1470" y1="1080" x2="1002" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="1640" y1="1080" x2="1016" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="1810" y1="1080" x2="1030" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="1980" y1="1080" x2="1044" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="2150" y1="1080" x2="1058" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="2320" y1="1080" x2="1072" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="2490" y1="1080" x2="1086" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="2660" y1="1080" x2="1100" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="2830" y1="1080" x2="1114" y2="0" stroke="#C5A46D" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="3000" y1="1080" x2="1128" y2="0" stroke="#C5A46D" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="0" y1="1080" x2="1920" y2="1080" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="890" x2="1920" y2="890" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="742" x2="1920" y2="742" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="626" x2="1920" y2="626" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="536" x2="1920" y2="536" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="466" x2="1920" y2="466" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="411" x2="1920" y2="411" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="368" x2="1920" y2="368" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="335" x2="1920" y2="335" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="309" x2="1920" y2="309" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="288" x2="1920" y2="288" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="273" x2="1920" y2="273" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="260" x2="1920" y2="260" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="251" x2="1920" y2="251" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="243" x2="1920" y2="243" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="237" x2="1920" y2="237" stroke="#C5A46D" stroke-opacity=".2"/>
+<line x1="0" y1="233" x2="1920" y2="233" stroke="#C5A46D" stroke-opacity=".2"/>
+<polygon points="560,1080 1000,1080 1000,0 800,0" fill="url(#sh)"/><polygon points="1300,1080 1480,1080 1200,0 1120,0" fill="url(#sh)"/></svg>
