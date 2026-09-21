@@ -20,8 +20,29 @@ foreach (['framework/views', 'framework/cache/data', 'framework/sessions', 'logs
 }
 
 // Base de datos de demostración (SQLite) con el contenido de ejemplo: se copia a /tmp al arrancar.
-if (! is_file('/tmp/database.sqlite') && is_file(__DIR__.'/../database/deploy.sqlite')) {
-    copy(__DIR__.'/../database/deploy.sqlite', '/tmp/database.sqlite');
+// Si la copia de una instancia reutilizada está dañada o bloqueada, se restaura desde el original.
+$seed = __DIR__.'/../database/deploy.sqlite';
+$database = '/tmp/database.sqlite';
+
+$isHealthy = static function (string $path): bool {
+    try {
+        $pdo = new PDO('sqlite:'.$path, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_TIMEOUT => 3]);
+        $pdo->query('SELECT 1 FROM settings LIMIT 1')->fetchColumn();
+
+        return $pdo->query('PRAGMA quick_check')->fetchColumn() === 'ok';
+    } catch (Throwable $exception) {
+        error_log('[despacho] base SQLite no disponible: '.$exception->getMessage());
+
+        return false;
+    }
+};
+
+if (is_file($seed) && (! is_file($database) || ! $isHealthy($database))) {
+    foreach (['', '-wal', '-shm', '-journal'] as $suffix) {
+        @unlink($database.$suffix);
+    }
+    copy($seed, $database);
+    error_log('[despacho] base SQLite restaurada desde deploy.sqlite');
 }
 
 require __DIR__.'/../vendor/autoload.php';
