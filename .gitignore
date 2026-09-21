@@ -26,7 +26,6 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 *Zone.Identifier
-/database/deploy.sqlite
 /.vercel
 .vercel
 .env*

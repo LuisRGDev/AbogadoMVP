@@ -8,6 +8,7 @@
  * administrada (DB_CONNECTION=mysql/pgsql) y un disco de archivos externo.
  */
 
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -37,17 +38,32 @@ $isHealthy = static function (string $path): bool {
     }
 };
 
-if (is_file($seed) && (! is_file($database) || ! $isHealthy($database))) {
+if (! is_file($database) || ! $isHealthy($database)) {
     foreach (['', '-wal', '-shm', '-journal'] as $suffix) {
         @unlink($database.$suffix);
     }
-    copy($seed, $database);
-    error_log('[despacho] base SQLite restaurada desde deploy.sqlite');
+
+    if (is_file($seed)) {
+        copy($seed, $database);
+        error_log('[despacho] base SQLite restaurada desde deploy.sqlite');
+    } else {
+        touch($database);
+        error_log('[despacho] deploy.sqlite no encontrado, se generará la base con migraciones');
+    }
 }
 
 require __DIR__.'/../vendor/autoload.php';
 
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php';
+
+// Red de seguridad: si aún así la base sigue vacía o dañada (p. ej. deploy.sqlite ausente),
+// se migra y siembra en caliente para que el sitio no quede caído.
+if (! $isHealthy($database)) {
+    $kernel = $app->make(Kernel::class);
+    $kernel->call('migrate', ['--force' => true]);
+    $kernel->call('db:seed', ['--force' => true]);
+    error_log('[despacho] base SQLite generada mediante migrate+seed en caliente');
+}
 
 $app->handleRequest(Request::capture());
